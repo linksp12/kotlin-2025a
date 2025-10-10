@@ -11,18 +11,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppWeek04">
+
+        <!-- 앱이 실행될 때 처음 열리는 Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 인사 화면 -->
         <activity
             android:name=".GreetingActivity"
             android:exported="false" />
-    </application>
 
+        <!-- 색상 변경 화면 -->
+        <activity
+            android:name=".ColorActivity"
+            android:exported="false" />
+
+    </application>
 </manifest>
