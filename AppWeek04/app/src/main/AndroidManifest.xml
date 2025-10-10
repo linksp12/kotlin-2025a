@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppWeek04">
 
-        <!-- 앱이 실행될 때 처음 열리는 Activity -->
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -22,15 +22,15 @@
             </intent-filter>
         </activity>
 
-        <!-- 인사 화면 -->
+
         <activity
             android:name=".GreetingActivity"
             android:exported="false" />
-
-        <!-- 색상 변경 화면 -->
         <activity
             android:name=".ColorActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".CounterActivity"
+            android:exported="false" />
     </application>
 </manifest>
