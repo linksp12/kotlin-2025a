@@ -1,0 +1,45 @@
+package com.appweek06
+
+import android.app.ActivityManager.TaskDescription
+import android.graphics.Color
+import android.webkit.WebSettings.RenderPriority
+import java.util.*
+
+data class Student(
+    val name: String,
+    val id: String = UUID.randomUUID().toString(),
+    val addedDate: Date = Date()
+)
+
+data class Task(
+    val title: String,
+    val description: String = "",
+    var isCompleted: Boolean = false,
+    val priority: TaskPriority,
+    val dueDate: Date?= null,
+    val id: String = UUID.randomUUID().toString(),
+    val createdDate: Date = Date(),
+) {
+
+
+    override fun toString(): String {
+        val status = if(isCompleted) "V" else "O"
+        val priorityIcon = when (priority){
+            TaskPriority.HIGH -> "!!!"
+            TaskPriority.MEDIUM -> "!!"
+            TaskPriority.LOW -> "!"
+        }
+        return "$status $priorityIcon $title"
+    }
+}
+
+enum class TaskPriority(val displayName: String,val color: Int){
+    HIGH("High", Color.RED),
+    MEDIUM("Medium", Color.BLUE),
+    LOW("Low", Color.GREEN)
+}
+
+enum class AppMode(val displayName: String) {
+    STUDENT_LIST("Student List"),
+    TASK_MANAGER("Task Manager"),
+}
